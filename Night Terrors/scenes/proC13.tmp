@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce878j00f0p2h"]
+
+[ext_resource type="Script" path="res://scenes/bulletspawner.gd" id="1_djhyj"]
+[ext_resource type="PackedScene" uid="uid://qjv4xupnmlj4" path="res://entities/player.tscn" id="1_whak0"]
+[ext_resource type="PackedScene" uid="uid://d3vi7im1s47fa" path="res://maps/bases/base_1.tscn" id="2_4s0ak"]
+[ext_resource type="PackedScene" uid="uid://c53jkv7ehfngk" path="res://entities/enemy_phantom.tscn" id="3_714jf"]
+
+[node name="prototype_environment" type="Node2D" node_paths=PackedStringArray("playerRef")]
+script = ExtResource("1_djhyj")
+playerRef = NodePath("player")
+
+[node name="player" parent="." instance=ExtResource("1_whak0")]
+position = Vector2(64, 118)
+projectileSpeed = 500
+
+[node name="map_entity" type="Node2D" parent="."]
+
+[node name="base1" parent="map_entity" instance=ExtResource("2_4s0ak")]
+
+[node name="layout1" type="TileMap" parent="map_entity"]
+format = 2
+
+[node name="enemy_phantom" parent="." instance=ExtResource("3_714jf")]
+position = Vector2(213, 67)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(276, 104)
+zoom = Vector2(1.935, 1.935)
+
+[connection signal="fire_gun" from="player" to="." method="_on_player_fire_gun"]
+[connection signal="i_am_player" from="player" to="enemy_phantom" method="_on_player_i_am_player"]
+[connection signal="who_is_player" from="enemy_phantom" to="player" method="_on_enemy_phantom_who_is_player"]

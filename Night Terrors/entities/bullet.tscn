@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cch4c3ich1hh1"]
+
+[ext_resource type="Texture2D" uid="uid://qaprfv5up8k6" path="res://sprites/prototype/bullet.png" id="1_ahtn8"]
+[ext_resource type="Script" path="res://scripts/bulletScript.gd" id="1_f87yl"]
+[ext_resource type="Script" path="res://scripts/bulletHitbox.gd" id="3_3stvg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8eave"]
+radius = 4.0
+
+[node name="bullet" type="Node2D" node_paths=PackedStringArray("mySprite")]
+script = ExtResource("1_f87yl")
+mySprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_ahtn8")
+
+[node name="bulletHitbox" type="Area2D" parent="."]
+script = ExtResource("3_3stvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bulletHitbox"]
+shape = SubResource("CircleShape2D_8eave")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="area_entered" from="bulletHitbox" to="." method="_on_bullet_hitbox_area_entered"]

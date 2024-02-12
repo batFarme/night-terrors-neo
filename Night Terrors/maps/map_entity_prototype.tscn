@@ -1,0 +1,419 @@
+[gd_scene load_steps=15 format=3 uid="uid://fsc74p7r4d37"]
+
+[ext_resource type="Script" path="res://scripts/mapMasterScript.gd" id="1_r33y5"]
+[ext_resource type="PackedScene" uid="uid://d3vi7im1s47fa" path="res://maps/base1/base_1.tscn" id="2_3ehyt"]
+[ext_resource type="PackedScene" uid="uid://c16hy3jusieaa" path="res://maps/base1/b_1_layout_2.tscn" id="3_2ioqa"]
+[ext_resource type="TileSet" uid="uid://50uubrjsdf2v" path="res://maps/tileset.tres" id="3_24201"]
+[ext_resource type="PackedScene" uid="uid://cw18k0a65ngpa" path="res://maps/base1/b_1_layout_1.tscn" id="5_io75h"]
+[ext_resource type="Script" path="res://scripts/spawnerScripts/mapList.gd" id="6_d0kuc"]
+
+[sub_resource type="Animation" id="Animation_cl2hj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("base_kheimon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("base_kheimon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("base_theros:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("base_theros:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:currentBaseHolder")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_d1y2b"]
+resource_name = "load kheimon"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("base_kheimon:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("base_kheimon:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("base_theros:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("base_theros:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:currentBaseHolder")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_yg455"]
+resource_name = "load theros"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("base_theros:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("base_theros:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("base_kheimon:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("base_kheimon:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:currentBaseHolder")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3niqw"]
+_data = {
+"RESET": SubResource("Animation_cl2hj"),
+"load kheimon": SubResource("Animation_d1y2b"),
+"load theros": SubResource("Animation_yg455")
+}
+
+[sub_resource type="Animation" id="Animation_682h6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("layout_selene:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("layout_selene:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("layout_apollo:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("layout_apollo:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:currentLayoutHolder")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_vcppp"]
+resource_name = "load apollo"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("layout_selene:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("layout_selene:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("layout_apollo:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("layout_apollo:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:currentLayoutHolder")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_3evd7"]
+resource_name = "load selene"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("layout_selene:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("layout_selene:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("layout_apollo:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("layout_apollo:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:currentLayoutHolder")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxs3k"]
+_data = {
+"RESET": SubResource("Animation_682h6"),
+"load apollo": SubResource("Animation_vcppp"),
+"load selene": SubResource("Animation_3evd7")
+}
+
+[node name="map_entity" type="Node2D" node_paths=PackedStringArray("mapList")]
+script = ExtResource("1_r33y5")
+mapList = NodePath("Node")
+
+[node name="base_theros" type="Node2D" parent="."]
+
+[node name="base1" parent="base_theros" instance=ExtResource("2_3ehyt")]
+
+[node name="base_kheimon" type="Node2D" parent="."]
+position = Vector2(0, 500)
+
+[node name="base2" type="TileMap" parent="base_kheimon"]
+texture_filter = 1
+tile_set = ExtResource("3_24201")
+format = 2
+layer_0/tile_data = PackedInt32Array(851978, 327680, 5, 851979, 131072, 1, 851980, 131072, 1, 851981, 131072, 1, 851982, 131072, 1, 851983, 131072, 1, 851984, 131072, 1, 851985, 131072, 1, 851986, 131072, 1, 851987, 131072, 1, 851988, 131072, 1, 851989, 131072, 1, 851990, 131072, 1, 851991, 393216, 5, 720905, 131072, 1, 720904, 131072, 1, 720903, 131072, 1, 720902, 131072, 1, 720901, 327680, 5, 720921, 131072, 1, 720922, 131072, 1, 720923, 131072, 1, 720924, 393216, 5, 720920, 131072, 1, 262144, 327680, 5, 196608, 196608, 2, 131072, 196608, 2, 65536, 196608, 2, -65536, 196608, 2, -131072, 196608, 2, -196608, 196608, 2, -262144, 196608, 2, -327680, 196608, 2, -393216, 196608, 2, -458752, 196608, 2, -524288, 196608, 2, -65503, 65536, 2, -131039, 65536, 2, -196575, 65536, 2, -262111, 65536, 2, -327647, 65536, 2, -393183, 65536, 2, -458719, 65536, 2, -524255, 65536, 2, 0, 196608, 2, 262177, 393216, 5, 196641, 65536, 2, 131105, 65536, 2, 65569, 65536, 2, 33, 65536, 2, 655364, 131072, 1, 655363, 131072, 1, 655362, 131072, 1, 655361, 327680, 5, 720906, 196608, 1, 655365, 196608, 1, 786442, 196608, 2, 655392, 393216, 5, 655391, 131072, 1, 655390, 131072, 1, 655389, 131072, 1, 655388, 65536, 1, 720919, 65536, 1, 786455, 65536, 2, 589825, 196608, 2, 524289, 196608, 2, 458753, 196608, 2, 393217, 196608, 2, 327681, 196608, 2, 262145, 196608, 1, 262176, 65536, 1, 327712, 65536, 2, 393248, 65536, 2, 458784, 65536, 2, 524320, 65536, 2, 589856, 65536, 2)
+
+[node name="base animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3niqw")
+}
+
+[node name="layout_apollo" type="Node2D" parent="."]
+
+[node name="b1layout2" parent="layout_apollo" instance=ExtResource("3_2ioqa")]
+
+[node name="layout_selene" type="Node2D" parent="."]
+position = Vector2(0, 500)
+
+[node name="b1layout1" parent="layout_selene" instance=ExtResource("5_io75h")]
+
+[node name="layout animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vxs3k")
+}
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("6_d0kuc")

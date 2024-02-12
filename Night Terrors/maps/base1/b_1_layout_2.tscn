@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://c16hy3jusieaa"]
+
+[ext_resource type="TileSet" uid="uid://50uubrjsdf2v" path="res://maps/tileset.tres" id="1_2vled"]
+[ext_resource type="Script" path="res://scripts/spawnerScripts/layoutScript.gd" id="2_ihy4b"]
+[ext_resource type="Script" path="res://scripts/spawnerScripts/enemySpawnerNodeScript.gd" id="3_78kv8"]
+
+[node name="b1layout2" type="TileMap"]
+texture_filter = 1
+tile_set = ExtResource("1_2vled")
+format = 2
+layer_0/tile_data = PackedInt32Array(524289, 131072, 10, 524290, 131072, 10, 524291, 131072, 10, 327681, 131072, 10, 327682, 131072, 10, 327683, 131072, 10, 524292, 196608, 10, 327684, 196608, 10, 524320, 131072, 10, 524319, 131072, 10, 524318, 131072, 10, 524317, 65536, 10, 327709, 65536, 10, 327710, 131072, 10, 327711, 131072, 10, 327712, 131072, 10, 524298, 65536, 10, 524299, 131072, 10, 524300, 131072, 10, 524301, 131072, 10, 524308, 131072, 10, 524309, 131072, 10, 524310, 131072, 10, 524311, 196608, 10, 262156, 131072, 10, 262157, 131072, 10, 262158, 131072, 10, 262159, 131072, 10, 262160, 131072, 10, 262161, 131072, 10, 262162, 131072, 10, 262163, 131072, 10, 262164, 131072, 10, 262165, 131072, 10, 262155, 65536, 10, 262166, 196608, 10, 524302, 196608, 10, 524307, 65536, 10)
+script = ExtResource("2_ihy4b")
+
+[node name="EnemySpawner2D" type="Node2D" parent="." node_paths=PackedStringArray("myParent")]
+position = Vector2(49, 59)
+script = ExtResource("3_78kv8")
+myParent = NodePath("..")
+
+[node name="EnemySpawner2D2" type="Node2D" parent="." node_paths=PackedStringArray("myParent")]
+position = Vector2(45, 116)
+script = ExtResource("3_78kv8")
+myParent = NodePath("..")
+
+[node name="EnemySpawner2D3" type="Node2D" parent="." node_paths=PackedStringArray("myParent")]
+position = Vector2(47, 148)
+script = ExtResource("3_78kv8")
+myParent = NodePath("..")
+
+[node name="EnemySpawner2D4" type="Node2D" parent="."]
+position = Vector2(206, 46)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D5" type="Node2D" parent="."]
+position = Vector2(197, 111)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D6" type="Node2D" parent="."]
+position = Vector2(342, 116)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D7" type="Node2D" parent="."]
+position = Vector2(330, 44)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D8" type="Node2D" parent="."]
+position = Vector2(268, 45)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D9" type="Node2D" parent="."]
+position = Vector2(197, 156)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D10" type="Node2D" parent="."]
+position = Vector2(269, 155)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D11" type="Node2D" parent="."]
+position = Vector2(342, 151)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D12" type="Node2D" parent="."]
+position = Vector2(427, 155)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D13" type="Node2D" parent="."]
+position = Vector2(498, 154)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D14" type="Node2D" parent="."]
+position = Vector2(495, 112)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")
+
+[node name="EnemySpawner2D15" type="Node2D" parent="."]
+position = Vector2(496, 64)
+scale = Vector2(82.2523, -1.05023)
+script = ExtResource("3_78kv8")

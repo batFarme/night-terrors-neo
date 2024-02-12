@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://c53jkv7ehfngk"]
+
+[ext_resource type="Script" path="res://scripts/enemy_phantom_script.gd" id="1_8svls"]
+[ext_resource type="Texture2D" uid="uid://bk18p3f6kyon3" path="res://sprites/prototype/phantom.png" id="1_iclde"]
+[ext_resource type="Script" path="res://scripts/hitbox2DScript.gd" id="3_hmvaf"]
+[ext_resource type="Script" path="res://scripts/hurtbox2DScript.gd" id="4_2l5px"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6tys"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nchqw"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkijs"]
+radius = 12.0416
+
+[node name="enemy_phantom" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_8svls")
+moveSpeed = 50.0
+hp = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d6tys")
+
+[node name="soul" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="soul"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_iclde")
+
+[node name="Hitbox2D" type="Area2D" parent="soul"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_hmvaf")
+knockback = 600
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soul/Hitbox2D"]
+shape = SubResource("CircleShape2D_nchqw")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Hurtbox2D" type="Area2D" parent="soul"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_2l5px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soul/Hurtbox2D"]
+shape = SubResource("CircleShape2D_gkijs")
+debug_color = Color(0, 1, 0, 0.419608)
+
+[connection signal="i_just_died" from="." to="." method="_on_i_just_died"]
+[connection signal="area_entered" from="soul/Hurtbox2D" to="soul/Hurtbox2D" method="_on_area_entered"]

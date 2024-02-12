@@ -1,0 +1,8 @@
+TO-DO-FLAG-1 (res://scripts/playerScript.gd): make it so that the player's soul scale isn't uneccessarily set every frame
+TO-DO-FLAG-2 (res://scripts/playerScript.gd): change how enemies get a reference to player
+TO-DO-FLAG-4 (res://scripts/playerScript.gd): make attack stun only apply to player; probably just pass stun arguments to hitbox from owner?
+TO-DO-FLAG-5 (res://scripts/bulletScript.gd): update bullet script to be compatible wtih multipel direcitons
+TO-DO-FLAG-6 (res://scripts/entityBase.gd): create stun state (invincible for a little while after hit); probably only applies to player, so make exceptions for enemies
+TO-DO-FLAG-8 (res://scenes/mapLoader.gd): update enemy counter in map loader
+TO-DO-FLAG-9 (res://scenes/mapLoader.gd): optimize youAreWin screen
+TO-DO-FLAG-10 (res://scripts/spawnerScripts/layoutScript.gd): rewrite spawning to work with map system, as described in res://codeDoc.txt

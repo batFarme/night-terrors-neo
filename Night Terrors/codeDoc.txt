@@ -1,0 +1,29 @@
+#for future reference, in case i ever forget how stuff works 
+
+MAP SYSTEM
+	the map system heirarchy goes:
+		- waveMaster
+		- mapMasterScript
+		- layoutScript
+		- enemySpawner
+	map system relies upon a base and layout. the base is the map base (think a gmod map) and then 
+	a layout (think props spawned in that gmod map). generally the map base has solid geometry and 
+	the layout has platforms and enemy spawners, though this isn't really set in stone.
+	
+	map_entity has references to the current and next base, and the current and next layout. these
+	are then loaded into base_theros and base_kheimon, and layout_apollo and layout_selene (which are 
+	named  after the greek gods of summer and winter, and of day and night; the layouts are going to 
+	be switching more often than the bases, so i thought internal names that mirror that would be cute) 
+	when the game scene is first loaded in, map_entity picks two random bases and two random layouts 
+	and assigns them to the current and next base and layout variables. all four are loaded in, but
+	the next base and layout are down below the camera. 
+	
+	waveMaster, a script tied to prototype_environment (should probably change the name? but 
+	theres no real point to, so :shrug:) asks map_entity to spawn in a wave, and passes two 
+	arguments: numberToSpawn and enemiesToSpawn. numberToSpawn, an integer, is how many enemies
+	should be spawned. enemiesToSpawn is an array with references to different enemy types. upon
+	recieveing this call, map_entity becomes lazy and just tells currentLayout to do it instead. 
+	begrudgingly, currentLayout then spawns the enemies at random points. these points have already
+	had references to them made, by way of the EnemySpawner2D node children it has. each one has a
+	script tied to it that, upon being loaded into the scene tree, call upon its owner (in this case,
+	their owner should be currentLayout) 
