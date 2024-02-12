@@ -7,19 +7,31 @@
 [ext_resource type="Texture2D" uid="uid://d2vl6d56h2ayx" path="res://sprites/prototype/Screenshot (191).png" id="7_m2lst"]
 [ext_resource type="Texture2D" uid="uid://c2k0xvakmhxhu" path="res://sprites/prototype/Screenshot (192).png" id="8_dt6yr"]
 
-[sub_resource type="Animation" id="Animation_8b164"]
-resource_name = "playerDamageShake"
+[sub_resource type="Animation" id="Animation_bd7sh"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
+tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(266, 104), Vector2(286, 104)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.935, 1.935)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(276, 104)]
 }
 
 [sub_resource type="Animation" id="Animation_cr7l2"]
@@ -49,31 +61,19 @@ tracks/1/keys = {
 "values": [Vector2(276, 104)]
 }
 
-[sub_resource type="Animation" id="Animation_bd7sh"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_8b164"]
+resource_name = "playerDamageShake"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.935, 1.935)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(276, 104)]
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(266, 104), Vector2(286, 104)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gy6fk"]
