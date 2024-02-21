@@ -1,16 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfdfd881m6hne"]
+[gd_scene load_steps=4 format=3 uid="uid://dfdfd881m6hne"]
 
-[ext_resource type="PackedScene" uid="uid://bccv1pvfqscjm" path="res://maps/base2/base_2.tscn" id="1_ssw0i"]
-[ext_resource type="PackedScene" uid="uid://vifwld7sio8e" path="res://maps/base2/b_2_layout_1.tscn" id="2_rbsur"]
 [ext_resource type="PackedScene" uid="uid://qjv4xupnmlj4" path="res://entities/player.tscn" id="3_3tfig"]
 [ext_resource type="Texture2D" uid="uid://d2vl6d56h2ayx" path="res://sprites/prototype/Screenshot (191).png" id="4_xcjg6"]
 [ext_resource type="Texture2D" uid="uid://c2k0xvakmhxhu" path="res://sprites/prototype/Screenshot (192).png" id="5_h1u3s"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="base2" parent="." instance=ExtResource("1_ssw0i")]
-
-[node name="b_2_layout_1" parent="." instance=ExtResource("2_rbsur")]
 
 [node name="player" parent="." node_paths=PackedStringArray("deadStateSprite") instance=ExtResource("3_3tfig")]
 position = Vector2(158, 129)

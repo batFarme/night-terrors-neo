@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://qjv4xupnmlj4"]
+[gd_scene load_steps=14 format=3 uid="uid://qjv4xupnmlj4"]
 
 [ext_resource type="Texture2D" uid="uid://gm0y87krqgiq" path="res://sprites/prototype/The_New_Second_Coming.png" id="1_0ga1e"]
 [ext_resource type="Script" path="res://scripts/playerScript.gd" id="1_b0vtj"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cvx17u6ljvmoq" path="res://sprites/prototype/dead.png" id="5_0fwxk"]
 [ext_resource type="Script" path="res://scripts/player/states/standingScript.gd" id="6_o2o0w"]
 [ext_resource type="Script" path="res://scripts/player/states/deadScript.gd" id="7_5cfsi"]
-[ext_resource type="Script" path="res://scripts/player/playerTimerScript.gd" id="8_a520h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1v00x"]
 height = 41.0
@@ -182,7 +181,7 @@ script = ExtResource("1_b0vtj")
 mySoul = NodePath("soul")
 gunSprite = NodePath("soul/weapon_sprite")
 myAnimator = NodePath("AnimationPlayer")
-myTimer = NodePath("Timer")
+myTimer = NodePath("")
 gravity = 2000.0
 accelSpeed = 5000.0
 topSpeed = 200.0
@@ -234,9 +233,3 @@ script = ExtResource("6_o2o0w")
 
 [node name="dead" type="Node2D" parent="states"]
 script = ExtResource("7_5cfsi")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
-script = ExtResource("8_a520h")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
