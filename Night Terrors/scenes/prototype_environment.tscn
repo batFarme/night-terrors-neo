@@ -96,9 +96,6 @@ position = Vector2(175, 35)
 [node name="enemy_phantom2" parent="." instance=ExtResource("3_714jf")]
 position = Vector2(313, 50)
 
-[node name="enemy_phantom3" parent="." instance=ExtResource("3_714jf")]
-position = Vector2(439, 46)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(276, 104)
 zoom = Vector2(1.935, 1.935)
