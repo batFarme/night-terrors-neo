@@ -174,14 +174,13 @@ _data = {
 "standing": SubResource("Animation_qcait")
 }
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("mySoul", "gunSprite", "myAnimator", "myTimer")]
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("mySoul", "gunSprite", "myAnimator")]
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_b0vtj")
 mySoul = NodePath("soul")
 gunSprite = NodePath("soul/weapon_sprite")
 myAnimator = NodePath("AnimationPlayer")
-myTimer = NodePath("")
 gravity = 2000.0
 accelSpeed = 5000.0
 topSpeed = 200.0
