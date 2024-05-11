@@ -68,6 +68,48 @@ func _physics_process(delta):
 	crntState.run(delta)
 	move_and_slide()
 
+#region ========================== STATES =========================================================
+'''
+func standingState(delta):
+	direction = Input.get_axis("dpadLeft", "dpadRight") #no analog stick support with this config!!!
+	if direction != 0:
+		lastDirection = direction
+		mySoul.scale.x = direction #have to optimize so that it doesnt call every freaking frame, only when needed, probably use is_action_just_pressed somehow? #TO-DO-FLAG-1
+	else: 
+		velocity.x -= velocity.x * currentFriction * delta #applies friction.
+		if abs(velocity.x) < 5:
+			velocity.x = 0    #so that friction doesnt just make velocity.x infinitely small.
+	
+	
+	if (velocity.x * direction) < topSpeed:
+		velocity.x += accelSpeed * direction * delta #actuallly mvoes the player using
+	
+	#if (v)
+	
+	if Input.is_action_just_pressed("jump") && is_on_floor(): #jumping
+		velocity.y -= jumpStrength
+	
+	if dropDownCount > 0:
+		dropDownCount -= 1
+		if Input.is_action_just_pressed("dpadDown"):
+			position.y += dropDownDistance
+			print("dropdown sent!")
+	elif Input.is_action_just_pressed("dpadDown"):
+		dropDownCount = dropDownWindow
+		print("dropdown count started")
+	
+	if Input.is_action_just_pressed("fire"):
+		gunBarrelPos = gunSprite.position
+		var bulletCreate = bullet.instantiate()
+		get_parent().add_child(bulletCreate)  #the getparent part is so that the bullet is instantiated as a child of the scene tree rather than a child of the player scene.
+		#instantiate a projectile entity 
+		pass
+func deadState(delta):
+	if Input.is_action_just_pressed("startButton"):
+		get_tree().change_scene_to_file("res://scenes/prototype_environment.tscn")
+'''
+#endregion
+
 func _on_enemy_phantom_who_is_player():
 	emit_signal("i_am_player", self)   #this is just a workaround till i get a proper fix. TO-DO-FLAG-2
 	pass # Replace with function body.

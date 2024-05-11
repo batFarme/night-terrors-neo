@@ -83,9 +83,8 @@ _data = {
 "playerDamageShake": SubResource("Animation_8b164")
 }
 
-[node name="prototype_environment" type="Node2D" node_paths=PackedStringArray("map_entity")]
+[node name="prototype_environment" type="Node2D"]
 script = ExtResource("1_u37wg")
-map_entity = NodePath("map_entity")
 
 [node name="player" parent="." node_paths=PackedStringArray("deadStateSprite") instance=ExtResource("1_whak0")]
 position = Vector2(109, 126)
@@ -101,7 +100,7 @@ position = Vector2(313, 50)
 position = Vector2(276, 104)
 zoom = Vector2(1.935, 1.935)
 
-[node name="cameraController" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_gy6fk")
 }
@@ -120,8 +119,6 @@ texture = ExtResource("8_dt6yr")
 
 [node name="map_entity" parent="." node_paths=PackedStringArray("youAreWinSprite") instance=ExtResource("5_iopuk")]
 youAreWinSprite = NodePath("../youAreWinSprite")
-
-[node name="pause menu" type="Node2D" parent="."]
 
 [connection signal="i_am_player" from="player" to="enemy_phantom" method="_on_player_i_am_player"]
 [connection signal="who_is_player" from="enemy_phantom" to="player" method="_on_enemy_phantom_who_is_player"]

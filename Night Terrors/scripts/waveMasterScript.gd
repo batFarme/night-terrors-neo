@@ -5,7 +5,7 @@ const caster = "to be added"
 var crntWave: int = 1
 @export var currentWave: int
 
-@export var map_entity: Node2D
+@onready var map_entity = get_node("map_entity")
 
 var waveThresholds: Array = [ #if ive got time, figure out how to have this stuff editable in the inspector
 	#wave no., enemies to be spawned, how many per wave, map size
@@ -28,8 +28,7 @@ func _ready():
 	#just to test how multi dimensional arrays work...
 
 func waveSpawn(waveNo):
-	var enemySpawners: Array = map_entity.currentLayoutHolder.get_node(0).enemySpawners
-	#map_entity.
+	var myWaveThresholds = waveThresholds[waveNo]
 	pass
 
 func _physics_process(delta):
